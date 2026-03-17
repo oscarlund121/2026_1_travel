@@ -152,7 +152,7 @@ form{
         display: none;
         margin-top: 0.5rem;
         padding: 1rem;
-        background: #fff;
+        background: white;
         border-radius: 0.5rem;
         .cancel_btn{
             background: #333;
