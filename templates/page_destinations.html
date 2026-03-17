@@ -1,0 +1,23 @@
+{% include "_header.html" %}
+
+<main>
+  <h1>Destinations</h1>
+
+  <div id="destinations_list">
+    {% for dest in destinations %}
+    <div id="destination_{{dest.destination_pk}}" class="destination_card">
+      <h2>{{dest.destination_title}}</h2>
+      <p>{{dest.destination_country}} — {{dest.destination_location}}</p>
+      <p>{{dest.destination_date_from}} to {{dest.destination_date_to}}</p>
+      <p>{{dest.destination_description}}</p>
+
+      {% if user %}
+      <a href="/destination/{{dest.destination_pk}}">Edit</a>
+      <button mix-delete="/api-delete-destination/{{dest.destination_pk}}">Delete</button>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</main>
+
+{% include "_footer.html" %}
