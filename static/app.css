@@ -148,6 +148,19 @@ form{
     button:hover{
         background: #e53935;
     }
+    .delete_popup{
+        display: none;
+        margin-top: 0.5rem;
+        padding: 1rem;
+        background: #fff;
+        border-radius: 0.5rem;
+        .cancel_btn{
+            background: #333;
+        }
+        .cancel_btn:hover{
+            background: #555;
+        }
+    }
 }
 
 .user{

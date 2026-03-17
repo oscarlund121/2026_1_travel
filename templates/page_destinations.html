@@ -13,7 +13,12 @@
 
       {% if user %}
       <a href="/destination/{{dest.destination_pk}}">Edit</a>
-      <button mix-delete="/api-delete-destination/{{dest.destination_pk}}">Delete</button>
+      <button onclick="document.getElementById('delete_popup_{{dest.destination_pk}}').style.display='block'">Delete</button>
+      <div id="delete_popup_{{dest.destination_pk}}" class="delete_popup">
+        <p>Delete this destination?</p>
+        <button mix-delete="/api-delete-destination/{{dest.destination_pk}}">Yes, delete</button>
+        <button class="cancel_btn" onclick="document.getElementById('delete_popup_{{dest.destination_pk}}').style.display='none'">Cancel</button>
+      </div>
       {% endif %}
     </div>
     {% endfor %}

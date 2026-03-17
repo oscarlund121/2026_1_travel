@@ -208,7 +208,8 @@ def show_destinations():
 def show_destination_edit(destination_pk):
     try:
         user = session.get("user", "")
-        if not user: return redirect("/login")
+        if not user: 
+            return redirect("/login")
         db, cursor = x.db()
         q = "SELECT * FROM destinations WHERE destination_pk = %s"
         cursor.execute(q, (destination_pk,))
